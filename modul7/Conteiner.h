@@ -35,4 +35,11 @@ public:
     int add_element_start(int value); 
     int add_element_end(int value);
     int add_element(int value, int index);
+
+    int del_element_start();
+    int del_element_end();
+    int del_element(int index);
+
+    int find_element(int value); //Находит элемент по значению, возвращает индекс первого совпадения
+
 };

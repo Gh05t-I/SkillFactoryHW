@@ -181,9 +181,81 @@ int Conteiner::add_element(int value, int index) {
     return 0;
 }
 
+
+int Conteiner::del_element_start() {
+
+    int* temp = new int[--m_size];
+    int result = m_array_integer[0];
+
+    for (int i = 0, j = 1; i < m_size; ++i, ++j) {
+        temp[i] = m_array_integer[j];
+    }
+
+    delete[] m_array_integer;
+
+    m_array_integer = temp;
+
+    return result;
+}
+
+int Conteiner::del_element_end() {
+
+    int* temp = new int[--m_size];
+    int result = m_array_integer[m_size];
+
+    for (int i = 0; i < m_size; ++i) {
+        temp[i] = m_array_integer[i];
+    }
+
+    delete[] m_array_integer;
+
+    m_array_integer = temp;
+
+    return result;
+}
+
+int Conteiner::del_element(int index) {
+
+    if (index >= m_size) {
+        throw - 2;
+    }
+    else if (index < 0) {
+        throw - 1;
+    }
+
+    int* temp = new int[--m_size];
+    int result = m_array_integer[index];
+
+    for (int i = 0, j = 0; i < m_size; ++i, ++j) {
+
+        if (j == index) {
+            ++j;
+        }
+        temp[i] = m_array_integer[j];
+    }
+
+    delete[] m_array_integer;
+
+    m_array_integer = temp;
+
+    return result;
+}
+
+int Conteiner::find_element(int value) {
+
+    for (int i = 0; i < m_size; ++i) {
+        if (m_array_integer[i] == value) {
+            return i;
+        }
+    }
+    return -1;
+}
+
 void Conteiner::reset_arr(int* arr, int size) {
 
     for (int i = 0; i < size; ++i) {
         arr[i] = 0;
     }
 }
+
+
