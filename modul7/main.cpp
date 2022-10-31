@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 #include<ctime>
 
 #include "Conteiner.h"
@@ -21,19 +21,19 @@ int main(int argc, char* argv[]) {
         std::cout << "lenght arr = " << con3->get_lenght() << std::endl;
         std::cout << std::endl;
 
-        std::cout << "Êîïèðîâàíèå êîíòåéíåðà" << std::endl;
+        std::cout << "ÐšÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð°" << std::endl;
         con3->copy_conteiner(con2);
         con3->show_conteiner();
         std::cout << "lenght arr = " << con3->get_lenght() << std::endl;
         std::cout << std::endl;
 
-        std::cout << "Ìåíÿåì ðàçìåð êîíòåéíåðà" << std::endl;
+        std::cout << "ÐœÐµÐ½ÑÐµÐ¼ Ñ€Ð°Ð·Ð¼ÐµÑ€ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð°" << std::endl;
         con3->resize(8);
         con3->show_conteiner();
         std::cout << "lenght arr = " << con3->get_lenght() << std::endl;
         std::cout << std::endl;
 
-        std::cout << "Äîáàâëåíèå ýëåìåíòà" << std::endl;
+        std::cout << "Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°" << std::endl;
         con3->add_element_start(223);
         con3->show_conteiner();
         std::cout << "lenght arr = " << con3->get_lenght() << std::endl;
@@ -48,7 +48,7 @@ int main(int argc, char* argv[]) {
         std::cout << "lenght arr = " << con3->get_lenght() << std::endl;
         std::cout << std::endl;
 
-        std::cout << "Óäàëåíèå ýëåìåíòà" << std::endl;
+        std::cout << "Ð£Ð´Ð°Ð»ÐµÐ½Ð¸Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°" << std::endl;
         int res{ 0 };
         res = con3->del_element_start();
         con3->show_conteiner();
@@ -60,14 +60,13 @@ int main(int argc, char* argv[]) {
         std::cout << "lenght arr = " << con3->get_lenght() << std::endl;
         std::cout << "element = " << res << std::endl;
 
-
         res = con3->del_element(con3->get_lenght() - 1);
         con3->show_conteiner();
         std::cout << "lenght arr = " << con3->get_lenght() << std::endl;
         std::cout << "element = " << res << std::endl;
         std::cout << std::endl;
 
-        std::cout << "Ïîèñê ýëåìåíòà" << std::endl;
+        std::cout << "ÐŸÐ¾Ð¸ÑÐº ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°" << std::endl;
         res = con3->find_element(43);
         con3->show_conteiner();
         std::cout << "lenght arr = " << con3->get_lenght() << std::endl;
@@ -78,7 +77,9 @@ int main(int argc, char* argv[]) {
         std::cout << "lenght arr = " << con3->get_lenght() << std::endl;
         std::cout << "index = " << res << std::endl;
 
-
+        std::cout << std::endl;
+        std::cout << "test = and []" << std::endl;
+        
         Conteiner con21(4);
         con21[3] = 555;
         con21[0] = 555;
@@ -90,22 +91,15 @@ int main(int argc, char* argv[]) {
         con21.show_conteiner();
         con22.show_conteiner();
 
-
         Conteiner con23(8);
-
-        
-        //con23 = con3;
-
-        
-        //con3->show_conteiner();
-        //con3[2] = 888;
-        //con3->show_conteiner();
-
-
-        
-
-        //int a = con3[0];
-
+       
+        con23 = *con3;
+        con3->show_conteiner();
+        con23.show_conteiner();
+         
+        con3->show_conteiner();
+        (*con3)[2] = 888;
+        con3->show_conteiner();   
 
         delete con2;
         delete con3;
@@ -117,7 +111,7 @@ int main(int argc, char* argv[]) {
         std::cout << ex.what() << std::endl;
     }
     catch (std::exception& ex) {
-        std::cout << "×òî òî íå òàê" << std::endl;
+        std::cout << "Ð§Ñ‚Ð¾ Ñ‚Ð¾ Ð½Ðµ Ñ‚Ð°Ðº" << std::endl;
         std::cout << ex.what() << std::endl;
     }
 
@@ -126,7 +120,7 @@ int main(int argc, char* argv[]) {
     std::cout << std::endl;
 
     try {
-        std::cout << "Ñîçäàíèå ñîíòåéíåðà ñ 0 ðàçìåðîì" << std::endl;
+        std::cout << "Ð¡Ð¾Ð·Ð´Ð°Ð½Ð¸Ðµ ÑÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð° Ñ 0 Ñ€Ð°Ð·Ð¼ÐµÑ€Ð¾Ð¼" << std::endl;
         Conteiner con(0);
 
     }
@@ -137,7 +131,7 @@ int main(int argc, char* argv[]) {
         std::cout << ex.what() << std::endl;
     }
     catch (std::exception& ex) {
-        std::cout << "×òî òî íå òàê" << std::endl;
+        std::cout << "Ð§Ñ‚Ð¾ Ñ‚Ð¾ Ð½Ðµ Ñ‚Ð°Ðº" << std::endl;
         std::cout << ex.what() << std::endl;
     }
     catch (std::bad_alloc& ba) {
@@ -145,7 +139,7 @@ int main(int argc, char* argv[]) {
     }
 
     try {
-        std::cout << "Ïîëó÷åíèå ýëåìåíòà" << std::endl;
+        std::cout << "ÐŸÐ¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°" << std::endl;
         Conteiner con1(10);
         con1.initialization_conteiner();
         con1.show_conteiner();
@@ -159,7 +153,7 @@ int main(int argc, char* argv[]) {
         std::cout << ex.what() << std::endl;
     }
     catch (std::exception& ex) {
-        std::cout << "×òî òî íå òàê" << std::endl;
+        std::cout << "Ð§Ñ‚Ð¾ Ñ‚Ð¾ Ð½Ðµ Ñ‚Ð°Ðº" << std::endl;
         std::cout << ex.what() << std::endl;
     }
     catch (std::bad_alloc& ba) {
@@ -167,7 +161,7 @@ int main(int argc, char* argv[]) {
     }
 
     try {
-        std::cout << "Äîáàâëåíèå ýëåìåíòà" << std::endl;
+        std::cout << "Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°" << std::endl;
         Conteiner con2(10);
         con2.initialization_conteiner();
         con2.show_conteiner();
@@ -181,7 +175,7 @@ int main(int argc, char* argv[]) {
         std::cout << ex.what() << std::endl;
     }
     catch (std::exception& ex) {
-        std::cout << "×òî òî íå òàê" << std::endl;
+        std::cout << "Ð§Ñ‚Ð¾ Ñ‚Ð¾ Ð½Ðµ Ñ‚Ð°Ðº" << std::endl;
         std::cout << ex.what() << std::endl;
     }
     catch (std::bad_alloc& ba) {
@@ -189,7 +183,7 @@ int main(int argc, char* argv[]) {
     }
 
     try {
-        std::cout << "Äîáàâëåíèå ýëåìåíòà" << std::endl;
+        std::cout << "Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°" << std::endl;
         Conteiner con6(10);
         con6.initialization_conteiner();
         con6.show_conteiner();
@@ -203,7 +197,7 @@ int main(int argc, char* argv[]) {
         std::cout << ex.what() << std::endl;
     }
     catch (std::exception& ex) {
-        std::cout << "×òî òî íå òàê" << std::endl;
+        std::cout << "Ð§Ñ‚Ð¾ Ñ‚Ð¾ Ð½Ðµ Ñ‚Ð°Ðº" << std::endl;
         std::cout << ex.what() << std::endl;
     }
     catch (std::bad_alloc& ba) {
@@ -211,7 +205,7 @@ int main(int argc, char* argv[]) {
     }
 
     try {
-        std::cout << "Óäàëåíèå ýëåìåíòà" << std::endl;
+        std::cout << "Ð£Ð´Ð°Ð»ÐµÐ½Ð¸Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°" << std::endl;
         Conteiner con7(10);
         con7.initialization_conteiner();
         con7.show_conteiner();
@@ -229,7 +223,7 @@ int main(int argc, char* argv[]) {
         std::cout << ex.what() << std::endl;
     }
     catch (std::exception& ex) {
-        std::cout << "×òî òî íå òàê" << std::endl;
+        std::cout << "Ð§Ñ‚Ð¾ Ñ‚Ð¾ Ð½Ðµ Ñ‚Ð°Ðº" << std::endl;
         std::cout << ex.what() << std::endl;
     }
     catch (std::bad_alloc& ba) {
@@ -237,7 +231,7 @@ int main(int argc, char* argv[]) {
     }
 
     try {
-        std::cout << "Êîïèðîâàíèå ýëåìåíòà" << std::endl;
+        std::cout << "ÐšÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°" << std::endl;
         Conteiner con3(10);
         con3.initialization_conteiner();
         con3.show_conteiner();
@@ -257,24 +251,20 @@ int main(int argc, char* argv[]) {
         std::cout << ex.what() << std::endl;
     }
     catch (std::exception& ex) {
-        std::cout << "×òî òî íå òàê" << std::endl;
+        std::cout << "Ð§Ñ‚Ð¾ Ñ‚Ð¾ Ð½Ðµ Ñ‚Ð°Ðº" << std::endl;
         std::cout << ex.what() << std::endl;
     }
     catch (std::bad_alloc& ba) {
         std::cerr << "bad_alloc caught: " << ba.what() << std::endl;
     }
 
-
-
     try {
         Conteiner con9;
         std::cout << "sizeof(con9) = " << sizeof(con9) << std::endl;
-        std::cout << "bad_alloc âûäåëåíèå ïàìÿòè" << std::endl;
+        std::cout << "bad_alloc Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð¸Ðµ Ð¿Ð°Ð¼ÑÑ‚Ð¸" << std::endl;
         Conteiner *con8 = new Conteiner[1'000'000];
         con8->initialization_conteiner();
         con8->show_conteiner();
-
-
     }
     catch (BadLenght& ex) {
         std::cout << ex.what() << std::endl;
@@ -283,13 +273,11 @@ int main(int argc, char* argv[]) {
         std::cout << ex.what() << std::endl;
     }
     catch (std::exception& ex) {
-        std::cout << "×òî òî íå òàê" << std::endl;
+        std::cout << "Ð§Ñ‚Ð¾ Ñ‚Ð¾ Ð½Ðµ Ñ‚Ð°Ðº" << std::endl;
         std::cout << ex.what() << std::endl;
     }
     catch (const char* e) {
         std::cout << e << std::endl;
     }
-
-
     return 0;
 }

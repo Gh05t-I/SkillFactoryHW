@@ -272,7 +272,8 @@ Conteiner& Conteiner::operator= (const Conteiner &right) {
     }
 
     for (int i = 0; i < right.get_lenght(); ++i) {
-        m_array_integer[i] = right.get_element(i);
+       m_array_integer[i] = right.get_element(i);
+      
     }
 
 }
