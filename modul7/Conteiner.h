@@ -12,7 +12,7 @@ private:
 public:
 
     //Конструкторы
-    Conteiner();;
+    Conteiner();
     Conteiner(int size); 
 
     Conteiner(const Conteiner& ref_Conteiner); 
@@ -21,7 +21,7 @@ public:
     ~Conteiner(); 
 
     void initialization_conteiner(); 
-    void show_conteiner(); 
+    void show_conteiner() const;
 
     //Геттеры сеттеры
     int get_element(int element) const;
@@ -42,4 +42,7 @@ public:
 
     int find_element(int value); //Находит элемент по значению, возвращает индекс первого совпадения
 
+    //Операторы
+    int& operator[] (const int index);
+    Conteiner& operator = (const Conteiner& right);
 };

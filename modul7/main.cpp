@@ -1,7 +1,9 @@
 #include<iostream>
 #include<ctime>
 
-#include"Conteiner.h"
+#include "Conteiner.h"
+#include "BadLenght.h"
+#include "BadRange.h"
 
 int main(int argc, char* argv[]) {
 
@@ -76,22 +78,47 @@ int main(int argc, char* argv[]) {
         std::cout << "lenght arr = " << con3->get_lenght() << std::endl;
         std::cout << "index = " << res << std::endl;
 
+
+        Conteiner con21(4);
+        con21[3] = 555;
+        con21[0] = 555;
+        std::cout << con21[3] << std::endl;
+
+        Conteiner con22(4);
+        con22 = con21;
+
+        con21.show_conteiner();
+        con22.show_conteiner();
+
+
+        Conteiner con23(8);
+
+        
+        //con23 = con3;
+
+        
+        //con3->show_conteiner();
+        //con3[2] = 888;
+        //con3->show_conteiner();
+
+
+        
+
+        //int a = con3[0];
+
+
         delete con2;
         delete con3;
     }
-    catch (int e) {
-        if (e == 0) {
-            std::cout << "Контейнер не создан" << std::endl;
-        }
-        else if (e == -1) {
-            std::cout << "Неверный параметр для элемента" << std::endl;
-        }
-        else if (e == -2) {
-            std::cout << "Индекс превышает размер массива" << std::endl;
-        }
+    catch (BadLenght& ex) {
+        std::cout << ex.what() << std::endl;
     }
-    catch (const char* e) {
-        std::cout << e << std::endl;
+    catch (BadRange& ex) {
+        std::cout << ex.what() << std::endl;
+    }
+    catch (std::exception& ex) {
+        std::cout << "Что то не так" << std::endl;
+        std::cout << ex.what() << std::endl;
     }
 
     std::cout << std::endl;
@@ -103,19 +130,15 @@ int main(int argc, char* argv[]) {
         Conteiner con(0);
 
     }
-    catch (int e) {
-        if (e == 0) {
-            std::cout << "Контейнер не создан" << std::endl;
-        }
-        else if (e == -1) {
-            std::cout << "Неверный параметр для элемента" << std::endl;
-        }
-        else if (e == -2) {
-            std::cout << "Индекс превышает размер массива" << std::endl;
-        }
+    catch (BadLenght& ex) {
+        std::cout << ex.what() << std::endl;
     }
-    catch (const char* e) {
-        std::cout << e << std::endl;
+    catch (BadRange& ex) {
+        std::cout << ex.what() << std::endl;
+    }
+    catch (std::exception& ex) {
+        std::cout << "Что то не так" << std::endl;
+        std::cout << ex.what() << std::endl;
     }
     catch (std::bad_alloc& ba) {
         std::cerr << "bad_alloc caught: " << ba.what() << std::endl;
@@ -129,19 +152,15 @@ int main(int argc, char* argv[]) {
 
         con1.get_element(-2);
     }
-    catch (int e) {
-        if (e == 0) {
-            std::cout << "Контейнер не создан" << std::endl;
-        }
-        else if (e == -1) {
-            std::cout << "Неверный параметр для элемента" << std::endl;
-        }
-        else if (e == -2) {
-            std::cout << "Индекс превышает размер массива" << std::endl;
-        }
+    catch (BadLenght& ex) {
+        std::cout << ex.what() << std::endl;
     }
-    catch (const char* e) {
-        std::cout << e << std::endl;
+    catch (BadRange& ex) {
+        std::cout << ex.what() << std::endl;
+    }
+    catch (std::exception& ex) {
+        std::cout << "Что то не так" << std::endl;
+        std::cout << ex.what() << std::endl;
     }
     catch (std::bad_alloc& ba) {
         std::cerr << "bad_alloc caught: " << ba.what() << std::endl;
@@ -155,19 +174,15 @@ int main(int argc, char* argv[]) {
 
         con2.add_element(777, -1);
     }
-    catch (int e) {
-        if (e == 0) {
-            std::cout << "Контейнер не создан" << std::endl;
-        }
-        else if (e == -1) {
-            std::cout << "Неверный параметр для элемента" << std::endl;
-        }
-        else if (e == -2) {
-            std::cout << "Индекс превышает размер массива" << std::endl;
-        }
+    catch (BadLenght& ex) {
+        std::cout << ex.what() << std::endl;
     }
-    catch (const char* e) {
-        std::cout << e << std::endl;
+    catch (BadRange& ex) {
+        std::cout << ex.what() << std::endl;
+    }
+    catch (std::exception& ex) {
+        std::cout << "Что то не так" << std::endl;
+        std::cout << ex.what() << std::endl;
     }
     catch (std::bad_alloc& ba) {
         std::cerr << "bad_alloc caught: " << ba.what() << std::endl;
@@ -181,19 +196,15 @@ int main(int argc, char* argv[]) {
 
         con6.add_element(777, 150);
     }
-    catch (int e) {
-        if (e == 0) {
-            std::cout << "Контейнер не создан" << std::endl;
-        }
-        else if (e == -1) {
-            std::cout << "Неверный параметр для элемента" << std::endl;
-        }
-        else if (e == -2) {
-            std::cout << "Индекс превышает размер массива" << std::endl;
-        }
+    catch (BadLenght& ex) {
+        std::cout << ex.what() << std::endl;
     }
-    catch (const char* e) {
-        std::cout << e << std::endl;
+    catch (BadRange& ex) {
+        std::cout << ex.what() << std::endl;
+    }
+    catch (std::exception& ex) {
+        std::cout << "Что то не так" << std::endl;
+        std::cout << ex.what() << std::endl;
     }
     catch (std::bad_alloc& ba) {
         std::cerr << "bad_alloc caught: " << ba.what() << std::endl;
@@ -211,19 +222,15 @@ int main(int argc, char* argv[]) {
         con7.del_element(9);
         con7.show_conteiner();
     }
-    catch (int e) {
-        if (e == 0) {
-            std::cout << "Контейнер не создан" << std::endl;
-        }
-        else if (e == -1) {
-            std::cout << "Неверный параметр для элемента" << std::endl;
-        }
-        else if (e == -2) {
-            std::cout << "Индекс превышает размер массива" << std::endl;
-        }
+    catch (BadLenght& ex) {
+        std::cout << ex.what() << std::endl;
     }
-    catch (const char* e) {
-        std::cout << e << std::endl;
+    catch (BadRange& ex) {
+        std::cout << ex.what() << std::endl;
+    }
+    catch (std::exception& ex) {
+        std::cout << "Что то не так" << std::endl;
+        std::cout << ex.what() << std::endl;
     }
     catch (std::bad_alloc& ba) {
         std::cerr << "bad_alloc caught: " << ba.what() << std::endl;
@@ -243,19 +250,15 @@ int main(int argc, char* argv[]) {
         con4.show_conteiner();
 
     }
-    catch (int e) {
-        if (e == 0) {
-            std::cout << "Контейнер не создан" << std::endl;
-        }
-        else if (e == -1) {
-            std::cout << "Неверный параметр для элемента" << std::endl;
-        }
-        else if (e == -2) {
-            std::cout << "Индекс превышает размер массива" << std::endl;
-        }
+    catch (BadLenght& ex) {
+        std::cout << ex.what() << std::endl;
     }
-    catch (const char* e) {
-        std::cout << e << std::endl;
+    catch (BadRange& ex) {
+        std::cout << ex.what() << std::endl;
+    }
+    catch (std::exception& ex) {
+        std::cout << "Что то не так" << std::endl;
+        std::cout << ex.what() << std::endl;
     }
     catch (std::bad_alloc& ba) {
         std::cerr << "bad_alloc caught: " << ba.what() << std::endl;
@@ -273,19 +276,15 @@ int main(int argc, char* argv[]) {
 
 
     }
-    catch (std::bad_alloc& ba) {
-        std::cerr << "bad_alloc caught: " << ba.what() << std::endl;
+    catch (BadLenght& ex) {
+        std::cout << ex.what() << std::endl;
     }
-    catch (int e) {
-        if (e == 0) {
-            std::cout << "Контейнер не создан" << std::endl;
-        }
-        else if (e == -1) {
-            std::cout << "Неверный параметр для элемента" << std::endl;
-        }
-        else if (e == -2) {
-            std::cout << "Индекс превышает размер массива" << std::endl;
-        }
+    catch (BadRange& ex) {
+        std::cout << ex.what() << std::endl;
+    }
+    catch (std::exception& ex) {
+        std::cout << "Что то не так" << std::endl;
+        std::cout << ex.what() << std::endl;
     }
     catch (const char* e) {
         std::cout << e << std::endl;
